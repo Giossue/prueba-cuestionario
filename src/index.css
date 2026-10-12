@@ -1,0 +1,36 @@
+body{margin:0;background:#f3f6f9}
+
+.print-document{display:none}
+
+@page{size:A4 portrait;margin:12mm 11mm 13mm}
+
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  html,body,#root{width:100%;min-width:0!important;margin:0!important;padding:0!important;background:#fff!important}
+  body{font-family:Arial,Roboto,sans-serif;color:#111}
+  .no-print,.MuiContainer-root{display:none!important}
+  .print-document{display:block!important;width:100%;max-width:none;margin:0 auto;font-size:8.5pt;line-height:1.25}
+  .print-heading{text-align:center;margin:0 0 4mm}
+  .print-heading>div{font-size:8pt;color:#b42318;letter-spacing:.04em}
+  .print-heading h1{font-size:12pt;line-height:1.2;margin:2mm 0;font-weight:700}
+  .print-heading p{font-size:8pt;margin:0;color:#333}
+  .print-section{margin:0 0 3mm;break-inside:auto}
+  .print-section h2{font-size:9pt;line-height:1.2;background:#deeaf6;border:1px solid #333;margin:0;padding:1.5mm 2mm;font-weight:700;break-after:avoid}
+  .print-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-left:1px solid #444;border-top:0}
+  .print-field{min-width:0;min-height:10mm;padding:1.5mm 1.7mm;border-right:1px solid #444;border-bottom:1px solid #444;display:flex;flex-direction:column;gap:1mm;break-inside:avoid;overflow-wrap:anywhere;white-space:pre-wrap}
+  .print-long{break-inside:auto}
+  .print-field strong{font-size:7.2pt;font-weight:700}
+  .print-field span{font-size:8.4pt}
+  .print-wide{grid-column:span 4}
+  .print-list{margin-top:2mm;break-inside:auto}
+  .print-list-title{background:#deeaf6;border:1px solid #444;border-bottom:0;padding:1.2mm 1.7mm;font-weight:700;font-size:8pt;break-after:avoid}
+  .print-list table{width:100%;border-collapse:collapse;table-layout:fixed}
+  .print-list th,.print-list td{border:1px solid #444;padding:1.2mm 1.6mm;text-align:left;vertical-align:top;overflow-wrap:anywhere;white-space:pre-wrap}
+  .print-list th{background:#f1f4f7;font-weight:700;font-size:7.5pt}
+  .print-list td{font-size:8pt}
+  .print-empty{border:1px solid #444;padding:1.5mm;color:#555}
+  .print-checklist{margin-top:2mm}
+  .print-checklist th:last-child,.print-answer{width:27mm;text-align:center!important}
+  .print-answer{white-space:nowrap!important}
+  .print-section,.print-list-title,.print-list tr,.print-field{orphans:2;widows:2}
+}
